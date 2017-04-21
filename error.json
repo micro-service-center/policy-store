@@ -1,0 +1,490 @@
+{
+  "errors": {
+    "path_policy_error": {
+      "policy": "path_policy",
+      "log_path": "validator",
+      "log_root": "",
+      "http_status": 401,
+      "code": "0001",
+      "msg": "request path did not match any services",
+      "emitter": "request"
+    },
+    "header_policy_error": {
+      "policy": "header_policy",
+      "log_path": "validator",
+      "log_root": "",
+      "http_status": 401,
+      "code": "0002",
+      "msg": "request header did not contain credential",
+      "emitter": "request"
+    },
+    "jwt_policy_error": {
+      "policy": "jwt_policy",
+      "log_path": "validator",
+      "log_root": "",
+      "http_status": 401,
+      "code": "0003",
+      "msg": "incorrect jwt credential",
+      "emitter": "request"
+    },
+    "jwt_did_not_expire_policy_error": {
+      "policy": "jwt_did_not_expire_policy",
+      "log_path": "validator",
+      "log_root": "",
+      "http_status": 401,
+      "code": "0004",
+      "msg": "jwt expired",
+      "emitter": "user"
+    },
+    "jwt_user_exist_policy_error": {
+      "policy": "jwt_user_exist_policy",
+      "log_path": "validator",
+      "log_root": "",
+      "http_status": 401,
+      "code": "0005",
+      "msg": "user missing in redis",
+      "emitter": "user"
+    },
+    "password_unchanged_policy_error": {
+      "policy": "password_unchanged_policy",
+      "log_path": "validator",
+      "log_root": "",
+      "http_status": 401,
+      "code": "0006",
+      "msg": "password already changed",
+      "emitter": "user"
+    },
+    "rate_limit_policy_error": {
+      "policy": "rate_limit_policy",
+      "log_path": "validator",
+      "log_root": "",
+      "http_status": 401,
+      "code": "0007",
+      "msg": "exceeded rate_limit",
+      "emitter": "request"
+    },
+    "request_has_attribute_policy_error": {
+      "policy": "request_has_attribute_policy",
+      "log_path": "validator",
+      "log_root": "",
+      "http_status": 401,
+      "code": "0008",
+      "msg": "invalid request attribute",
+      "emitter": "request"
+    },
+    "user_sdk_policy_error": {
+      "policy": "request_has_attribute_policy",
+      "log_path": "validator",
+      "log_root": "",
+      "http_status": 401,
+      "code": "0009",
+      "msg": "sdk request error",
+      "emitter": "userSDKRequest"
+    },
+    "header_date_expire_policy_error": {
+      "policy": "header_date_expire_policy",
+      "log_path": "validator",
+      "log_root": "",
+      "http_status": 401,
+      "code": "0010",
+      "msg": "request date header expired",
+      "emitter": "request"
+    },
+    "signature_policy_error": {
+      "policy": "signature_policy",
+      "log_path": "validator",
+      "log_root": "",
+      "http_status": 401,
+      "code": "0011",
+      "msg": "invalid request signature header",
+      "emitter": "request"
+    },
+    "vcode_policy_error": {
+      "policy": "vcode_policy",
+      "log_path": "validator",
+      "log_root": "",
+      "http_status": 500,
+      "code": "0012",
+      "msg": "vcode service unavailable",
+      "emitter": "request"
+    },
+    "load_private_pem_error": {
+      "policy": "",
+      "log_path": "validator",
+      "log_root": "",
+      "http_status": 401,
+      "code": "0013",
+      "msg": "private pem load fail",
+      "emitter": "request"
+    },
+    "email_service_error": {
+      "policy": "",
+      "log_path": "validator",
+      "log_root": "",
+      "http_status": 500,
+      "code": "0014",
+      "msg": "service unavailable",
+      "emitter": "request"
+    },
+    "two_factor_error": {
+      "policy": "",
+      "log_path": "validator",
+      "log_root": "",
+      "http_status": 400,
+      "code": "0015",
+      "msg": "two factor verify error",
+      "emitter": "request"
+    },
+    "login_request_format_policy_error": {
+      "policy": "login_request_format_policy",
+      "log_path": "validator",
+      "log_root": "",
+      "http_status": 409,
+      "code": "01001",
+      "msg": "invalid login request format",
+      "emitter": "loginRequest"
+    },
+    "register_request_format_policy_error": {
+      "policy": "register_request_format_policy",
+      "log_path": "validator",
+      "log_root": "",
+      "http_status": 409,
+      "code": "01002",
+      "msg": "invalid register request format",
+      "emitter": "registerRequest"
+    },
+    "username_verify_policy_error": {
+      "policy": "username_verify_policy",
+      "log_path": "validator",
+      "log_root": "",
+      "http_status": 409,
+      "code": "01003",
+      "msg": "username already exist",
+      "emitter": "registerRequest"
+    },
+    "change_pwd_at_policy_error": {
+      "policy": "change_pwd_at_policy",
+      "log_path": "validator",
+      "log_root": "",
+      "http_status": 409,
+      "code": "01004",
+      "msg": "user id already exist",
+      "emitter": "InternalServer"
+    },
+    "login_account_policy_error": {
+      "policy": "login_account_policy",
+      "log_path": "validator",
+      "log_root": "",
+      "http_status": 404,
+      "code": "01005",
+      "msg": "account not exist",
+      "emitter": "loginRequest"
+    },
+    "login_password_policy_error": {
+      "policy": "login_password_policy",
+      "log_path": "validator",
+      "log_root": "",
+      "http_status": 422,
+      "code": "01006",
+      "msg": "user pass error",
+      "emitter": "loginRequest"
+    },
+    "login_history_policy_error": {
+      "policy": "login_password_policy",
+      "log_path": "validator",
+      "log_root": "",
+      "http_status": 404,
+      "code": "01007",
+      "msg": "user not exist",
+      "emitter": "loginHistoryRequest"
+    },
+    "login_optkey_policy_error": {
+      "policy": "login_optkey_policy",
+      "log_path": "validator",
+      "log_root": "",
+      "http_status": 401,
+      "code": "01008",
+      "msg": "two factor need verify",
+      "emitter": "loginRequest"
+    },
+    "login_two_factor_policy_error": {
+      "policy": "login_optkey_policy",
+      "log_path": "validator",
+      "log_root": "",
+      "http_status": 404,
+      "code": "01009",
+      "msg": "two factor token not exist",
+      "emitter": "loginRequest"
+    },
+    "login_two_factor_status_policy_error": {
+      "policy": "login_optkey_policy",
+      "log_path": "validator",
+      "log_root": "",
+      "http_status": 400,
+      "code": "01010",
+      "msg": "two factor verify failed",
+      "emitter": "loginRequest"
+    },
+    "login_two_factor_server_policy_error": {
+      "policy": "login_optkey_policy",
+      "log_path": "validator",
+      "log_root": "",
+      "http_status": 500,
+      "code": "01011",
+      "msg": "two factor service unavailable",
+      "emitter": "loginRequest"
+    },
+    "crypto_currency_policy_error": {
+      "policy": "crypto_currency_policy",
+      "log_path": "validator",
+      "log_root": "",
+      "http_status": 400,
+      "code": "0019",
+      "msg": "invalid crypto currency symbol",
+      "emitter": "DepositWithdrawalRequest"
+    },
+    "trade_argument_policy_error": {
+      "policy": "trade_argument_policy",
+      "log_path": "validator",
+      "log_root": "",
+      "http_status": 400,
+      "code": "03001",
+      "msg": "invalid argument",
+      "emitter": "tradeRequest"
+    },
+    "trade_data_policy_error": {
+      "policy": "trade_data_policy",
+      "log_path": "validator",
+      "log_root": "",
+      "http_status": 404,
+      "code": "03002",
+      "msg": "data do not exist",
+      "emitter": "tradeRequest | orderBookRequest"
+    },
+    "trade_jwt_policy_error": {
+      "policy": "trade_jwt_policy",
+      "log_path": "validator",
+      "log_root": "",
+      "http_status": 401,
+      "code": "03003",
+      "msg": "required jwt",
+      "emitter": "orderRequest | balanceRequest | transactionRequest"
+    },
+    "trade_user_balance_policy_error": {
+      "policy": "trade_user_balance_policy",
+      "log_path": "validator",
+      "log_root": "",
+      "http_status": 400,
+      "code": "03004",
+      "msg": "account already exist",
+      "emitter": "userBalanceRequest"
+    },
+    "trade_user_balance_account_policy_error": {
+      "policy": "trade_user_balance_account_policy",
+      "log_path": "validator",
+      "log_root": "",
+      "http_status": 400,
+      "code": "03005",
+      "msg": "account do not exist",
+      "emitter": "orderRequest | userBalanceRequest"
+    },
+    "trade_service_degrade_policy_error": {
+      "policy": "trade_service_degrade_account_policy",
+      "log_path": "validator",
+      "log_root": "",
+      "http_status": 500,
+      "code": "03000",
+      "msg": "system unavailable",
+      "emitter": "orderRequest"
+    },
+    "trade_global_policy_error": {
+      "policy": "trade_global_exception_handler",
+      "log_path": "validator",
+      "log_root": "",
+      "http_status": 500,
+      "code": "03006",
+      "msg": "system unavailable",
+      "emitter": "request"
+    },
+    "trade_user_account_policy_error": {
+      "policy": "trade_user_account_policy",
+      "log_path": "validator",
+      "log_root": "",
+      "http_status": 400,
+      "code": "03007",
+      "msg": "user account not enough",
+      "emitter": "orderRequest | userBalanceRequest"
+    },
+    "user_service_password_policy_error": {
+      "policy": "user_service_password_policy",
+      "log_path": "validator",
+      "log_root": "",
+      "http_status": 400,
+      "code": "07001",
+      "msg": "user pass verify fail",
+      "emitter": "userServiceRequest"
+    },
+    "user_service_email_policy_error": {
+      "policy": "user_service_email_policy",
+      "log_path": "validator",
+      "log_root": "",
+      "http_status": 400,
+      "code": "07002",
+      "msg": "user email already exist",
+      "emitter": "userServiceRequest"
+    },
+    "user_service_user_policy_error": {
+      "policy": "user_service_user_policy",
+      "log_path": "validator",
+      "log_root": "",
+      "http_status": 404,
+      "code": "07003",
+      "msg": "user not exist",
+      "emitter": "userServiceRequest"
+    },
+    "user_service_mobile_policy_error": {
+      "policy": "user_service_mobile_policy",
+      "log_path": "validator",
+      "log_root": "",
+      "http_status": 409,
+      "code": "07004",
+      "msg": "user mobile already exist",
+      "emitter": "userServiceRequest"
+    },
+    "user_service_bind_mobile_policy_error": {
+      "policy": "user_service_bind_mobile_policy",
+      "log_path": "validator",
+      "log_root": "",
+      "http_status": 409,
+      "code": "07005",
+      "msg": "user mobile already bind",
+      "emitter": "userServiceRequest"
+    },
+    "user_service_bind_email_policy_error": {
+      "policy": "user_service_bind_email_policy",
+      "log_path": "validator",
+      "log_root": "",
+      "http_status": 409,
+      "code": "07006",
+      "msg": "user email already bind",
+      "emitter": "userServiceRequest"
+    },
+    "user_service_trade_pass_policy_error": {
+      "policy": "user_service_trade_pass_policy",
+      "log_path": "validator",
+      "log_root": "",
+      "http_status": 409,
+      "code": "07007",
+      "msg": "user trade pass already exist",
+      "emitter": "userServiceRequest"
+    },
+    "user_service_sms_error": {
+      "policy": "user_service_trade_pass_policy",
+      "log_path": "validator",
+      "log_root": "",
+      "http_status": 500,
+      "code": "07008",
+      "msg": "sms service unavailable",
+      "emitter": "userServiceRequest"
+    },
+    "user_service_bank_error": {
+      "policy": "user_service_bank_policy",
+      "log_path": "validator",
+      "log_root": "",
+      "http_status": 404,
+      "code": "07009",
+      "msg": "user bank not exist",
+      "emitter": "userServiceRequest"
+    },
+    "user_service_card_error": {
+      "policy": "user_service_card_policy",
+      "log_path": "validator",
+      "log_root": "",
+      "http_status": 404,
+      "code": "07010",
+      "msg": "user card not exist",
+      "emitter": "userServiceRequest"
+    },
+    "user_service_not_kyc_error": {
+      "policy": "user_service_not_kyc_policy",
+      "log_path": "validator",
+      "log_root": "",
+      "http_status": 400,
+      "code": "07011",
+      "msg": "user kyc verify fail",
+      "emitter": "userServiceRequest"
+    },
+    "user_service_kyc_error": {
+      "policy": "user_service_trade_pass_policy",
+      "log_path": "validator",
+      "log_root": "",
+      "http_status": 500,
+      "code": "07012",
+      "msg": "kyc service unavailable",
+      "emitter": "userServiceRequest"
+    },
+    "user_service_card_verify_error": {
+      "policy": "user_service_card_verify_policy",
+      "log_path": "validator",
+      "log_root": "",
+      "http_status": 400,
+      "code": "07013",
+      "msg": "user card verify fail",
+      "emitter": "userServiceRequest"
+    },
+    "user_service_bank_verify_error": {
+      "policy": "user_service_bank_verify_policy",
+      "log_path": "validator",
+      "log_root": "",
+      "http_status": 400,
+      "code": "07014",
+      "msg": "user bank verify fail",
+      "emitter": "userServiceRequest"
+    },
+    "vcode_issue_params_error": {
+      "policy": "",
+      "log_path": "validator",
+      "log_root": "",
+      "http_status": 400,
+      "code": "09001",
+      "msg": "params error",
+      "emitter": "vcodeRequest"
+    },
+    "vcode_issue_frequently_error": {
+      "policy": "",
+      "log_path": "validator",
+      "log_root": "",
+      "http_status": 400,
+      "code": "09002",
+      "msg": "request frequently",
+      "emitter": "vcodeRequest"
+    },
+    "vcode_send_error": {
+      "policy": "",
+      "log_path": "validator",
+      "log_root": "",
+      "http_status": 500,
+      "code": "09003",
+      "msg": "vcode service unavailable",
+      "emitter": "vcodeRequest"
+    },
+    "vcode_verify_params_error": {
+      "policy": "",
+      "log_path": "validator",
+      "log_root": "",
+      "http_status": 400,
+      "code": "09004",
+      "msg": "params error",
+      "emitter": "vcodeRequest"
+    },
+    "vcode_verify_code_error": {
+      "policy": "",
+      "log_path": "validator",
+      "log_root": "",
+      "http_status": 409,
+      "code": "09005",
+      "msg": "code already verify",
+      "emitter": "vcodeRequest"
+    }
+  }
+}

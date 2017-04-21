@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "tool-policy": "https://code.teambition.com/tools/policy.git"
+  }
+}
