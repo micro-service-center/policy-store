@@ -16,7 +16,7 @@ This is the __Policy__ Storage for the Tool Project. All Policies should be stor
 
 ### The Policy File
 ```javascript
-const BasePolicy = require('tool-policy').Policy // <- Always Extends Base Policy Class
+const BasePolicy = require('policy').Policy // <- Always Extends Base Policy Class
 
 /** Class for User Policy */
 class PathPolicy extends BasePolicy {
