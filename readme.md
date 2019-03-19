@@ -6,7 +6,7 @@
 \__/  \____/ \____/ /_/           / .___/ \____/ /_/   /_/   \___/   \__, /         /____/  \__/  \____/ /_/     \___/
                                  /_/                                /____/                                             
 ```
-# Tool Policy Store
+# Policy Store
 This is the __Policy__ Storage for the Tool Project. All Policies should be stored in this repo.
 
 ### Rules
